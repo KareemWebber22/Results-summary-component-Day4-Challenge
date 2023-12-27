@@ -1,211 +1,215 @@
 <!DOCTYPE html>
+
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@100;500;700;800&display=swap" rel="stylesheet">
-  
-  <title>Frontend Mentor | Results summary component</title>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@100;500;700;800&display=swap" rel="stylesheet">
+    
+    <title>Frontend Mentor | Results summary component</title>
 
-    body {
-      display: flex;
-      flex-direction: column;
-      background-color: whitesmoke;
-      font-family: 'Hanken Grotesk', sans-serif;;
-    }
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
 
-    #main-container {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 80vh;
-      width: 100vw;
-    }
+      body {
+        display: flex;
+        flex-direction: column;
+        background-color: whitesmoke;
+        font-family: 'Hanken Grotesk', sans-serif;;
+      }
 
-    #container-one {
-      display: flex;
-      flex-wrap: wrap;
-      flex-direction: column;
-      justify-content: center;
-      text-align: center;
-      width: 30vw;
-      height: 70vh;
-      background-image: linear-gradient(hsl(252, 89%, 56%), hsl(241, 88%, 41%));
-      border-radius: 2rem;
-    }
+      #main-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 80vh;
+        width: 100vw;
+      }
 
-    #container-two {
-      display: flex;
-      /* padding: 0.5rem; */
-      flex-direction: column;
-      justify-content: center;
-      align-items: start;
-      width: 30vw;
-      height: 70vh;
-      background-color: white;
-      border-radius: 2rem;
-    }
+      #container-one {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        width: 30vw;
+        height: 70vh;
+        background-image: linear-gradient(hsl(252, 89%, 56%), hsl(241, 88%, 41%));
+        border-radius: 2rem;
+      }
 
-    #summary, #your-result {
-      font-size: 1.4rem;
-      font-weight: bold;
-    }
+      #container-two {
+        display: flex;
+        /* padding: 0.5rem; */
+        flex-direction: column;
+        justify-content: center;
+        align-items: start;
+        width: 30vw;
+        height: 70vh;
+        background-color: white;
+        border-radius: 2rem;
+      }
 
-    #your-result, #score, #total {
-      color: hsl(241, 100%, 89%);
-    }
+      #summary, #your-result {
+        font-size: 1.4rem;
+        font-weight: bold;
+      }
 
-    #result, h2, #continue {
-      color: white;
-    }
+      #your-result, #score, #total {
+        color: hsl(241, 100%, 89%);
+      }
 
-    #circle {
-      display: flex;
-      flex-direction: column;
-      margin-left: auto;
-      margin-right: auto;
-      border-radius: 50%;
-      height: 175px;
-      width: 175px;
-      background-image: linear-gradient(rgb(41, 5, 139), hsla(241, 89%, 38%, 0));
-    }
+      #result, h2, #continue {
+        color: white;
+      }
 
-    #result {
-      margin-top: 1rem;
-      margin-bottom: -1rem;
-      font-size: 5rem;
-      font-weight: 800;
-    }
+      #circle {
+        display: flex;
+        flex-direction: column;
+        margin-left: auto;
+        margin-right: auto;
+        border-radius: 50%;
+        height: 175px;
+        width: 175px;
+        background-image: linear-gradient(rgb(41, 5, 139), hsla(241, 89%, 38%, 0));
+      }
 
-    #content-2 {
-      margin-left: 1.4rem;
-      width: 75%;
-    }
+      #result {
+        margin-top: 1rem;
+        margin-bottom: -1rem;
+        font-size: 5rem;
+        font-weight: 800;
+      }
 
-    #reaction {
-      background-color: rgb(240, 218, 218);
-    }
+      #content-2 {
+        margin-left: 1.4rem;
+        width: 75%;
+      }
 
-    #memory {
-      background-color: hsl(39, 100%, 85%);
-    }
+      #reaction {
+        background-color: rgb(240, 218, 218);
+      }
 
-    #verbal {
-      background-color: hsl(166, 90%, 88%);
-    }
+      #memory {
+        background-color: hsl(39, 100%, 85%);
+      }
 
-    #visual {
-      background-color: hsl(234, 94%, 87%);
-    }
+      #verbal {
+        background-color: hsl(166, 90%, 88%);
+      }
 
-    h3,  #section-score{
-      display: inline;
-    }
+      #visual {
+        background-color: hsl(234, 94%, 87%);
+      }
 
-    #reaction, #memory, #verbal, #visual {
-      display: flex;
-      justify-content: space-around;
-      align-items: center;
-      gap: 10px;
-      border-radius: 10px;
-      margin-bottom: 15px;
-    }
+      h3,  .section-score{
+        display: inline;
+      }
 
-    img {
-      margin-right: -30px;
-    }
+      #reaction, #memory, #verbal, #visual {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        gap: 10px;
+        border-radius: 10px;
+        margin-bottom: 15px;
+      }
 
-    #reaction > h3 {
-      color: rgb(236, 74, 74);
-    }
+      img {
+        margin-right: -30px;
+      }
 
-    #memory > h3 {
-      color: hsl(38, 100%, 50%);
-    }
+      #reaction > h3 {
+        color: rgb(236, 74, 74);
+      }
 
-    #verbal > h3 {
-      color: hsl(166, 97%, 34%);
-    }
+      #memory > h3 {
+        color: hsl(38, 100%, 50%);
+      }
 
-    #visual > h3 {
-      color: hsl(234, 95%, 50%);
-    }
+      #verbal > h3 {
+        color: hsl(166, 97%, 34%);
+      }
 
-    #continue {
-      background-color: hsl(224, 30%, 27%);
-      padding: 20px;
-      text-align: center;
-      border-radius: 30px;
-    }
+      #visual > h3 {
+        color: hsl(234, 95%, 50%);
+      }
 
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
+      #continue {
+        background-color: hsl(224, 30%, 27%);
+        padding: 20px;
+        text-align: center;
+        border-radius: 30px;
+      }
 
-  </style>
-</head>
-<body>
+      .attribution { font-size: 11px; text-align: center; }
+      .attribution a { color: hsl(228, 45%, 44%); }
+
+    </style>
+
+  </head>
+
+  <body>
 
   <div id="main-container">
 
-    <div id="container-one">
+      <div id="container-one">
 
-      <div id="content-1">
-        <p id="your-result">Your Result</p>
-        <div id="circle">
-          <p id="result">76</p>
-        <p id="total">of 100</p>
+        <div id="content-1">
+          <p id="your-result">Your Result</p>
+          <div id="circle">
+            <p id="result">76</p>
+          <p id="total">of 100</p>
+          </div>
+          <h2>Great</h2>
+          <p id="score">You scored higher than 65% of the people who have taken these tests.</p>
         </div>
-        <h2>Great</h2>
-        <p id="score">You scored higher than 65% of the people who have taken these tests.</p>
+        
       </div>
-      
+        
+      <div id="container-two">
+        <div id="content-2"> 
+          <p id="summary">Summary</p>
+          <div id="reaction">
+            <img src="assets\images\icon-reaction.svg" alt="bolt">
+            <h3>Reaction</h3>
+            <p class="section-score"><span>80</span> / 100</p>
+          </div>
+
+          <div id="memory">
+            <img src="assets/images/icon-memory.svg" alt="bolt">
+            <h3>Memory</h3>
+            <p class="section-score"><span>92</span> / 100</p>
+          </div>
+
+          <div id="verbal">
+            <img src="assets/images/icon-verbal.svg" alt="bolt">
+            <h3>Verbal</h3>
+            <p class="section-score"><span>61</span> / 100</p>
+          </div>
+
+          <div id="visual">
+            <img src="assets/images/icon-visual.svg" alt="bolt">
+            <h3>Visual</h3>
+            <p class="section-score"><span>72</span> / 100</p>
+          </div>
+
+          <p id="continue">Continue</p>
+      </div>
+      </div>
+
     </div>
-      
-    <div id="container-two">
-      <div id="content-2"> 
-        <p id="summary">Summary</p>
-        <div id="reaction">
-          <img src="assets\images\icon-reaction.svg" alt="bolt">
-          <h3>Reaction</h3>
-          <p id="section-score"><span>80</span> / 100</p>
-        </div>
 
-        <div id="memory">
-          <img src="assets/images/icon-memory.svg" alt="bolt">
-          <h3>Memory</h3>
-          <p id="section-score"><span>92</span> / 100</p>
-        </div>
-
-        <div id="verbal">
-          <img src="assets/images/icon-verbal.svg" alt="bolt">
-          <h3>Verbal</h3>
-          <p id="section-score"><span>61</span> / 100</p>
-        </div>
-
-        <div id="visual">
-          <img src="assets/images/icon-visual.svg" alt="bolt">
-          <h3>Visual</h3>
-          <p id="section-score"><span>72</span> / 100</p>
-        </div>
-
-        <p id="continue">Continue</p>
+    
+    <div class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+      Coded by <a href="#">Kareem Ahmed</a>.
     </div>
-    </div>
-
-  </div>
-
   
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
-  
-</body>
+  </body>
 </html>
